@@ -4,27 +4,122 @@
   box-sizing: border-box;
 }
 
+@font-face {
+  font-family: Pearl;
+  src: url('/fonts/TAN-PEARL.otf');
+}
+
+@font-face {
+  font-family: Glacial-Regular;
+  src: url('/fonts/GlacialIndifference-Regular.otf');
+}
+
+@font-face {
+  font-family: Glacial-Bold;
+  src: url('/fonts/GlacialIndifference-Bold.otf');
+}
+
 :root {
   font-family: Inter, system-ui, Avenir, Helvetica, Arial, sans-serif;
   line-height: 1.5;
   font-weight: 400;
   font-size: 14px;
 
+  --primary-text: #4b4b4b;
+  --secondary-text: #353535;
+
   color-scheme: light dark;
-  color: rgba(255, 255, 255, 0.87);
-  background-color: #242424;
+  color: var(--primary-text);
+  background-color: #fff;
 
   font-synthesis: none;
   text-rendering: optimizeLegibility;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
   -webkit-text-size-adjust: 100%;
+
+}
+
+/* ===== Scrollbar CSS ===== */
+/* Firefox */
+* {
+  scrollbar-width: auto;
+  scrollbar-color: #a6a6a6 #303030;
+}
+
+/* Chrome, Edge, and Safari */
+*::-webkit-scrollbar {
+  width: 9px;
+}
+
+*::-webkit-scrollbar-track {
+  background: #303030;
+}
+
+*::-webkit-scrollbar-thumb {
+  background-color: #a6a6a6;
+  border-radius: 6px;
+  border: 0px none #ffffff;
 }
 
 body {
   margin: 0;
   display: flex;
-  place-items: center;
+  flex-direction: column;
   min-width: 320px;
   min-height: 100vh;
+}
+
+.flex {
+  display: flex;
+}
+
+.flex-col {
+  flex-direction: column;
+}
+
+.header {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 1rem;
+}
+
+.header img {
+  width: 300px;
+}
+
+.hero {
+  display: flex;
+  flex-direction: column;
+  gap: 1.8rem;
+}
+
+.slogan-container {
+  background-color: #f2f2f2;
+  align-items: center;
+  justify-content: center;
+  overflow: hidden;
+  padding: 1rem;
+  margin-top: 3rem;
+}
+
+
+.signphic-slogan {
+  font-size: 4.5rem;
+  font-family: Pearl, serif;
+  color: var(--primary-text);
+}
+
+.motto-container {
+  justify-content: center;
+  align-items: center;
+  gap: 1rem;
+  overflow: hidden;
+}
+
+.motto {
+  font-size: 2.8rem;
+  font-family: Glacial-Regular, serif;
+  color: var(--secondary-text);
 }
